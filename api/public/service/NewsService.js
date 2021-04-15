@@ -1,15 +1,14 @@
 /* eslint-disable camelcase */
 import db from '../../src/models';
-
 class NewsService {
 
 	static async getNews() {
 		try {
 			const result = await db.News.findAll();
-
+			// News tablosundaki tüm dataları çekme işlemi
 			return {
 				type: true,
-				message: 'Haberler getirildi',
+				message: 'Haberler verileri alındı',
 				data: result
 			};
 		}
@@ -31,7 +30,6 @@ class NewsService {
 				type: true,
 				message: 'Kayıt başarılı'
 			};
-	
 		}
 		catch (error) {
 			throw error;
@@ -40,4 +38,3 @@ class NewsService {
 
 }
 export default NewsService;
-
