@@ -23,9 +23,12 @@ if (config.environment === 'production') {
 			host: process.env.DB_HOST,
 			port: process.env.DB_PORT,
 			dialect: 'postgres',
-			dialectOption: {
-				ssl: true,
-				native: true
+			ssl: true,
+			dialectOptions: {
+				ssl: {
+					require: true,
+					rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+				}
 			},
 			logging: true
 		}
