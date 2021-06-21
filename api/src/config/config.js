@@ -26,11 +26,21 @@ module.exports = {
   },
 
   production: {
+    use_env_variable: "DATABASE_URL",
     database: "d2b8p3c1e8eqb",
     username: "wlcvmyyiizjyiz",
     password:
       "77035062855ef723150aa39d307013d36499219d11a0ff20ac0326a42db41099",
     host: "ec2-3-212-75-25.compute-1.amazonaws.com",
     dialect: "postgres",
+    ssl: true,
+    protocol: "postgres",
+    logging: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // <<<<<< YOU NEED THIS
+      },
+    },
   },
 };
