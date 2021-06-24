@@ -22,11 +22,11 @@ class LoginController {
 		try {
 			const result = await NewsService.getNews();
 			if (!result.type) {
-				util.setError(200, result.message);
-				return util.send(res);
-			}
-			util.setSuccess(200, result.message, result.data);
-			return util.send(res);
+				res.json({
+					message: "Service error"
+				}) 
+			} 
+			res.json(res.body)
 		}
 		catch (error) {
 			util.setError(400, error.message);
@@ -46,11 +46,11 @@ class LoginController {
 		try {
 			const result = await NewsService.postNews(req.body);
 			if (!result.type) {
-					res.json({
-						message: "Service error"
-					})
+				util.setError(200, result.message);
+				return util.send(res);
 			}
-			res.json(res.data)
+			util.setSuccess(200, result.message);
+			return util.send(res);
 		}
 		catch (error) {
         
