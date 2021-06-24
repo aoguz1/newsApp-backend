@@ -22,11 +22,10 @@ class LoginController {
 		try {
 			const result = await NewsService.getNews();
 			if (!result.type) {
-				res.json({
-					message: "Service error"
-				}) 
-			} 
-			res.json(res.data)
+				util.setError(200, result.message);
+				return util.send(res);
+			}
+			return util.send(res);
 		}
 		catch (error) {
 			util.setError(400, error.message);
