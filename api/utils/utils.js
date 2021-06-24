@@ -30,7 +30,7 @@ export default class Util {
 		};
 		if (this.type) {
 
-			return res.status(this.statusCode).json(result);
+			return res.status(this.statusCode).json(res);
 		
 		}
 		return res.status(this.statusCode).json({
