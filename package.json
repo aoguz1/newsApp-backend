@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test&&npx sequelize db:migrate:undo:all&&npx sequelize db:migrate&&mocha --require @babel/register ./api/test/*.js --timeout 10000 --exit",
-    "start": "npx sequelize db:migrate&&nodemon --exec babel-node ./api/index.js",
+    "start": "nodemon --exec babel-node ./api/index.js",
     "lint": "eslint **/*.js",
     "fix": "eslint --fix --ext .js,.jsx ."
   },

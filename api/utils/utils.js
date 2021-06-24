@@ -9,10 +9,7 @@ export default class Util {
 	
 	}
 
-	setSuccess(statusCode, message, data) {
-
-		this.statusCode = statusCode;
-		this.message = message;
+	setSuccess(data) {
 		this.data = data;
 		this.type = true;
 	
