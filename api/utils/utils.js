@@ -26,8 +26,6 @@ export default class Util {
 	send(res) {
 
 		const result = {
-			status: this.type,
-			message: this.message,
 			data: this.data
 		};
 		if (this.type) {
