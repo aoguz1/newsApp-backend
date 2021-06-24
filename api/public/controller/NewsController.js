@@ -25,8 +25,7 @@ class LoginController {
 				util.setError(200, result.message);
 				return util.send(res);
 			}
-			util.setSuccess(result.data);
-			return util.send(res);
+			res.send(result.data)
 		}
 		catch (error) {
 			util.setError(400, error.message);
