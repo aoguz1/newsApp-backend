@@ -26,7 +26,7 @@ class LoginController {
 					message: "Service error"
 				}) 
 			} 
-			res.json(res.body)
+			res.json(res.data)
 		}
 		catch (error) {
 			util.setError(400, error.message);
